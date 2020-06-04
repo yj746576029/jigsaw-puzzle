@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0;
+    }
+
+    .box {
+        background-color: blue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .main {
+        width: 100%;
+        flex: 3;
+    }
+
+    .main>div {
+        width: 80px;
+        height: 80px;
+
+    }
+
+    .main>div>div {
+        width: 50px;
+        height: 50px;
+        background-color: #fff;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        left: calc(50vw - 25px);
+        top: 50px;
+    }
+
+    .foot {
+        width: 100%;
+        flex: 1;
+        position: relative;
+    }
+
+    .foot>div:nth-child(1) {
+        width: 50px;
+        height: 50px;
+        background-color: #666;
+        position: fixed;
+        top: 513px;
+        left: 29px
+    }
+
+    .foot>div:nth-child(2) {
+        width: 50px;
+        height: 50px;
+        background-color: #666;
+        position: fixed;
+        top: 586px;
+        left: 106px
+    }
+
+    .foot>div:nth-child(3) {
+        width: 50px;
+        height: 50px;
+        background-color: #666;
+        position: fixed;
+        top: 454px;
+        left: 155px;
+    }
+
+    .foot>div:nth-child(4) {
+        width: 50px;
+        height: 50px;
+        background-color: #666;
+        position: fixed;
+        top: 582px;
+        left: 211px
+    }
+
+    .foot>div:nth-child(5) {
+        width: 50px;
+        height: 50px;
+        background-color: #666;
+        position: fixed;
+        top: 503px;
+        left: 287px
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div class="main">
+            <div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+            </div>
+        </div>
+        <div class="foot">
+            <div data-touch="touch1"></div>
+            <div data-touch="touch2"></div>
+            <div data-touch="touch3"></div>
+            <div data-touch="touch4"></div>
+            <div data-touch="touch5"></div>
+        </div>
+    </div>
+</body>
+<script>
+    //禁用回弹
+    document.body.addEventListener('touchmove', function (e) {
+        e.preventDefault()
+    }, { passive: false })
+
+    var div1 = $('.main>div>div:nth-child(1)').position()
+    var div2 = $('.main>div>div:nth-child(2)').position()
+    var div3 = $('.main>div>div:nth-child(3)').position()
+    var div4 = $('.main>div>div:nth-child(4)').position()
+    var div5 = $('.main>div>div:nth-child(5)').position()
+
+    var touch1 = $('.foot>div:nth-child(1)').position()
+    var touch2 = $('.foot>div:nth-child(2)').position()
+    var touch3 = $('.foot>div:nth-child(3)').position()
+    var touch4 = $('.foot>div:nth-child(4)').position()
+    var touch5 = $('.foot>div:nth-child(5)').position()
+
+    var x = 0;
+    var y = 0;
+    var p = {};
+    $('.foot>div').on("touchstart", function (e) {
+        p = $(this).position()
+        var touch = e.targetTouches[0];
+        x = touch.pageX;
+        y = touch.pageY;
+    })
+    $('.foot>div').on("touchmove", function (e) {
+        var touch = e.targetTouches[0];
+        var disX = p.left + touch.pageX - x;
+        var disY = p.top + (touch.pageY - y);
+        $(this).css({
+            left: disX + "px",
+            top: disY + "px"
+        });
+    });
+    $('.foot>div').on("touchend", function (e) {
+        var num=eval($(this).data('touch'));
+        var touch = e.changedTouches[0];
+        var disX = p.left + touch.pageX - x;
+        var disY = p.top + (touch.pageY - y);
+        var ll = num.left + "px";
+        var tt = num.top + "px";
+        console.log(ll,tt)
+        if (disX > div1.left - 20 && disX < div1.left + 20) {
+            if (disY > div1.top - 20 && disY < div1.top + 20) {
+                ll = div1.left + "px";
+                tt = div1.top + "px";
+            }
+            else if (disY > div2.top - 20 && disY < div2.top + 20) {
+                ll = div2.left + "px";
+                tt = div2.top + "px";
+            }
+            else if (disY > div3.top - 20 && disY < div3.top + 20) {
+                ll = div3.left + "px";
+                tt = div3.top + "px";
+            }
+            else if (disY > div4.top - 20 && disY < div4.top + 20) {
+                ll = div4.left + "px";
+                tt = div4.top + "px";
+            }
+            else if (disY > div5.top - 20 && disY < div5.top + 20) {
+                ll = div5.left + "px";
+                tt = div5.top + "px";
+            }
+            $(this).css({
+                left: ll,
+                top: tt,
+            });
+
+        } else {
+            $(this).css({
+                left: ll,
+                top: tt,
+            });
+        }
+        x = 0
+        y = 0
+    });
+</script>
+
+</html>
