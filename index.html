@@ -10,114 +10,161 @@
 <style>
     body {
         margin: 0;
-    }
-
-    .box {
-        background-color: blue;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        width: 100vw;
         height: 100vh;
-        overflow: hidden;
+        background: url('./static/image/bg.png');
+        background-size: 100% 100%;
+    }
+    .pingzi{
+        background: url('./static/image/pingzi.png');
+        background-size: 100% 100%;
+        width: 66px;
+        height:255px;
+        position: fixed;
+        left: calc( 50vw - 33px);
+        top: 35vh;
+    }
+    .pingzi>div{
+        width:50%;
+        height: 51px;
+        float: left;
+    }
+    .qiepian>div{
+        width: 33px;
+        height:51px;
+        position: fixed;
     }
 
-    .main {
-        width: 100%;
-        flex: 3;
+    .qiepian>div:nth-child(1){
+        top: calc(100vh - 150px);
+        left: calc(10vw - 16px);
+    }
+    .qiepian>div:nth-child(2){
+        top: calc(100vh - 150px);
+        left: calc(30vw - 16px);
+    }
+    .qiepian>div:nth-child(3){
+        top: calc(100vh - 150px);
+        left: calc(50vw - 16px);
+    }
+    .qiepian>div:nth-child(4){
+        top: calc(100vh - 150px);
+        left: calc(70vw - 16px);
+    }
+    .qiepian>div:nth-child(5){
+        top: calc(100vh - 150px);
+        left: calc(90vw - 16px);
     }
 
-    .main>div {
-        width: 80px;
-        height: 80px;
 
+    .qiepian>div:nth-child(6){
+        top: calc(100vh - 75px);
+        left: calc(10vw - 16px);
+    }
+    .qiepian>div:nth-child(7){
+        top: calc(100vh - 75px);
+        left: calc(30vw - 16px);
+    }
+    .qiepian>div:nth-child(8){
+        top: calc(100vh - 75px);
+        left: calc(50vw - 16px);
+    }
+    .qiepian>div:nth-child(9){
+        top: calc(100vh - 75px);
+        left: calc(70vw - 16px);
+    }
+    .qiepian>div:nth-child(10){
+        top: calc(100vh - 75px);
+        left: calc(90vw - 16px);
     }
 
-    .main>div>div {
-        width: 50px;
-        height: 50px;
+    .qiepian>.t01{
+        background: url('./static/image/pz01.png');
+        background-size: 100% 100%;
+    }
+    .qiepian>.t02{
+        background: url('./static/image/pz02.png');
+        background-size: 100% 100%;
+        
+    }
+    .qiepian>.t03{
+        background: url('./static/image/pz03.png');
+        background-size: 100% 100%;
+    }
+    .qiepian>.t04{
+        background: url('./static/image/pz04.png');
+        background-size: 100% 100%;
+    }
+    .qiepian>.t05{
+        background: url('./static/image/pz05.png');
+        background-size: 100% 100%;
+    }
+    .qiepian>.t06{
+        background: url('./static/image/pz06.png');
+        background-size: 100% 100%;
+    }
+    .qiepian>.t07{
+        background: url('./static/image/pz07.png');
+        background-size: 100% 100%;
+        
+    }
+    .qiepian>.t08{
+        background: url('./static/image/pz08.png');
+        background-size: 100% 100%;
+    }
+    .qiepian>.t09{
+        background: url('./static/image/pz09.png');
+        background-size: 100% 100%;
+    }
+    .qiepian>.t10{
+        background: url('./static/image/pz10.png');
+        background-size: 100% 100%;
+    }
+    .btn-sub{
+        width: 26vw;
+        line-height: 40px;
         background-color: #fff;
+        border-radius: 40px;
         text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        left: calc(50vw - 25px);
-        top: 50px;
-    }
-
-    .foot {
-        width: 100%;
-        flex: 1;
-        position: relative;
-    }
-
-    .foot>div:nth-child(1) {
-        width: 50px;
-        height: 50px;
-        background-color: #666;
+        color: #003684;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 0 2vw;
         position: fixed;
-        top: 513px;
-        left: 29px
+        bottom: 10px;
+        left: calc( 50vw - 15vw);
     }
-
-    .foot>div:nth-child(2) {
-        width: 50px;
-        height: 50px;
-        background-color: #666;
-        position: fixed;
-        top: 586px;
-        left: 106px
-    }
-
-    .foot>div:nth-child(3) {
-        width: 50px;
-        height: 50px;
-        background-color: #666;
-        position: fixed;
-        top: 454px;
-        left: 155px;
-    }
-
-    .foot>div:nth-child(4) {
-        width: 50px;
-        height: 50px;
-        background-color: #666;
-        position: fixed;
-        top: 582px;
-        left: 211px
-    }
-
-    .foot>div:nth-child(5) {
-        width: 50px;
-        height: 50px;
-        background-color: #666;
-        position: fixed;
-        top: 503px;
-        left: 287px
+    .hide{
+        display: none;
     }
 </style>
 
 <body>
-    <div class="box">
-        <div class="main">
-            <div>
-                <div>1</div>
-                <div>2</div>
-                <div>3</div>
-                <div>4</div>
-                <div>5</div>
-            </div>
-        </div>
-        <div class="foot">
-            <div data-touch="touch1"></div>
-            <div data-touch="touch2"></div>
-            <div data-touch="touch3"></div>
-            <div data-touch="touch4"></div>
-            <div data-touch="touch5"></div>
-        </div>
+
+    <div class="pingzi">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
     </div>
+    <div class="qiepian">
+        <div class="t01" data-touch="touch01" data-num="1"></div>
+        <div class="t07" data-touch="touch07" data-num="7"></div>
+        <div class="t08" data-touch="touch08" data-num="8"></div>
+        <div class="t02" data-touch="touch02" data-num="2"></div>
+        <div class="t03" data-touch="touch03" data-num="3"></div>
+        <div class="t09" data-touch="touch09" data-num="9"></div>
+        <div class="t10" data-touch="touch10" data-num="10"></div>
+        <div class="t04" data-touch="touch04" data-num="4"></div>
+        <div class="t05" data-touch="touch05" data-num="5"></div>
+        <div class="t06" data-touch="touch06" data-num="6"></div>
+    </div>
+    <div class="btn-sub hide"> 点击提交 </div>
 </body>
 <script>
     //禁用回弹
@@ -125,28 +172,51 @@
         e.preventDefault()
     }, { passive: false })
 
-    var div1 = $('.main>div>div:nth-child(1)').position()
-    var div2 = $('.main>div>div:nth-child(2)').position()
-    var div3 = $('.main>div>div:nth-child(3)').position()
-    var div4 = $('.main>div>div:nth-child(4)').position()
-    var div5 = $('.main>div>div:nth-child(5)').position()
+    var pinObj={
+        p01:'',
+        p02:'',
+        p03:'',
+        p04:'',
+        p05:'',
+        p06:'',
+        p07:'',
+        p08:'',
+        p09:'',
+        p10:'',
+    };
 
-    var touch1 = $('.foot>div:nth-child(1)').position()
-    var touch2 = $('.foot>div:nth-child(2)').position()
-    var touch3 = $('.foot>div:nth-child(3)').position()
-    var touch4 = $('.foot>div:nth-child(4)').position()
-    var touch5 = $('.foot>div:nth-child(5)').position()
+    var div1 = $('.pingzi>div:nth-child(1)').offset()
+    var div2 = $('.pingzi>div:nth-child(2)').offset()
+    var div3 = $('.pingzi>div:nth-child(3)').offset()
+    var div4 = $('.pingzi>div:nth-child(4)').offset()
+    var div5 = $('.pingzi>div:nth-child(5)').offset()
+    var div6 = $('.pingzi>div:nth-child(6)').offset()
+    var div7 = $('.pingzi>div:nth-child(7)').offset()
+    var div8 = $('.pingzi>div:nth-child(8)').offset()
+    var div9 = $('.pingzi>div:nth-child(9)').offset()
+    var div10 = $('.pingzi>div:nth-child(10)').offset()
+
+    var touch01 = $('.t01').position()
+    var touch02 = $('.t02').position()
+    var touch03 = $('.t03').position()
+    var touch04 = $('.t04').position()
+    var touch05 = $('.t05').position()
+    var touch06 = $('.t06').position()
+    var touch07 = $('.t07').position()
+    var touch08 = $('.t08').position()
+    var touch09 = $('.t09').position()
+    var touch10 = $('.t10').position()
 
     var x = 0;
     var y = 0;
     var p = {};
-    $('.foot>div').on("touchstart", function (e) {
+    $('.qiepian>div').on("touchstart", function (e) {
         p = $(this).position()
         var touch = e.targetTouches[0];
         x = touch.pageX;
         y = touch.pageY;
     })
-    $('.foot>div').on("touchmove", function (e) {
+    $('.qiepian>div').on("touchmove", function (e) {
         var touch = e.targetTouches[0];
         var disX = p.left + touch.pageX - x;
         var disY = p.top + (touch.pageY - y);
@@ -155,49 +225,90 @@
             top: disY + "px"
         });
     });
-    $('.foot>div').on("touchend", function (e) {
+    $('.qiepian>div').on("touchend", function (e) {
         var num=eval($(this).data('touch'));
+        var dataNum=eval($(this).data('num'));
         var touch = e.changedTouches[0];
         var disX = p.left + touch.pageX - x;
         var disY = p.top + (touch.pageY - y);
         var ll = num.left + "px";
         var tt = num.top + "px";
-        console.log(ll,tt)
-        if (disX > div1.left - 20 && disX < div1.left + 20) {
-            if (disY > div1.top - 20 && disY < div1.top + 20) {
+        var fanwei = 10
+        if (disX > div1.left - fanwei && disX < div1.left + fanwei) {
+            if (disY > div1.top - fanwei && disY < div1.top + fanwei) {
                 ll = div1.left + "px";
                 tt = div1.top + "px";
+                pinObj.p01=dataNum+'';
             }
-            else if (disY > div2.top - 20 && disY < div2.top + 20) {
-                ll = div2.left + "px";
-                tt = div2.top + "px";
-            }
-            else if (disY > div3.top - 20 && disY < div3.top + 20) {
+            else if (disY > div3.top - fanwei && disY < div3.top + fanwei) {
                 ll = div3.left + "px";
                 tt = div3.top + "px";
+                pinObj.p03=dataNum+'';
             }
-            else if (disY > div4.top - 20 && disY < div4.top + 20) {
-                ll = div4.left + "px";
-                tt = div4.top + "px";
-            }
-            else if (disY > div5.top - 20 && disY < div5.top + 20) {
+            else if (disY > div5.top - fanwei && disY < div5.top + fanwei) {
                 ll = div5.left + "px";
                 tt = div5.top + "px";
+                pinObj.p05=dataNum+'';
             }
-            $(this).css({
-                left: ll,
-                top: tt,
-            });
-
-        } else {
-            $(this).css({
-                left: ll,
-                top: tt,
-            });
+            else if (disY > div7.top - fanwei && disY < div7.top + fanwei) {
+                ll = div7.left + "px";
+                tt = div7.top + "px";
+                pinObj.p07=dataNum+'';
+            }
+            else if (disY > div9.top - fanwei && disY < div9.top + fanwei) {
+                ll = div9.left + "px";
+                tt = div9.top + "px";
+                pinObj.p09=dataNum+'';
+            }
+        } 
+        else if(disX > div2.left - fanwei && disX < div2.left + fanwei){
+            if (disY > div2.top - fanwei && disY < div2.top + fanwei) {
+                ll = div2.left + "px";
+                tt = div2.top + "px";
+                pinObj.p02=dataNum+'';
+            }
+            else if (disY > div4.top - fanwei && disY < div4.top + fanwei) {
+                ll = div4.left + "px";
+                tt = div4.top + "px";
+                pinObj.p04=dataNum+'';
+            }
+            else if (disY > div6.top - fanwei && disY < div6.top + fanwei) {
+                ll = div6.left + "px";
+                tt = div6.top + "px";
+                pinObj.p06=dataNum+'';
+            }
+            else if (disY > div8.top - fanwei && disY < div8.top + fanwei) {
+                ll = div8.left + "px";
+                tt = div8.top + "px";
+                pinObj.p08=dataNum+'';
+            }
+            else if (disY > div10.top - fanwei && disY < div10.top + fanwei) {
+                ll = div10.left + "px";
+                tt = div10.top + "px";
+                pinObj.p10=dataNum+'';
+            }
         }
+        $(this).css({
+                left: ll,
+                top: tt,
+            });
         x = 0
         y = 0
+        check()
     });
+
+    function check(){
+        console.log(pinObj)
+        if(pinObj.p01!=''&&pinObj.p02!=''&&pinObj.p03!=''&&pinObj.p04!=''&&pinObj.p05!=''&&pinObj.p06!=''&&pinObj.p07!=''&&pinObj.p08!=''&&pinObj.p09!=''&&pinObj.p10!=''){
+            if(pinObj.p01=='1'&&pinObj.p02=='2'&&pinObj.p03=='3'&&pinObj.p04=='4'&&pinObj.p05=='5'&&pinObj.p06=='6'&&pinObj.p07=='7'&&pinObj.p08=='8'&&pinObj.p09=='9'&&pinObj.p10=='10'){
+                alert('成功')
+                $('.btn-sub').removeClass('hide')
+            }else{
+                alert('失败')
+                window.location.reload();
+            }
+        }
+    }
 </script>
 
 </html>
